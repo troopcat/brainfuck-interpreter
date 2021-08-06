@@ -36,29 +36,29 @@ int main(int argc, char **argv){
     for(int i = 0;i < size; i++){
         char c = content[i];
 
-        if(c == *(">")){tape_index++;}
+        if(c == *'>'){tape_index++;}
 
-        else if(c == *("<")){tape_index--;}
+        else if(c == '<'){tape_index--;}
 
-        else if(c == *("+")){tape[tape_index]++;}
+        else if(c == '+'){tape[tape_index]++;}
 
-        else if(c == *("-")){tape[tape_index]--;}
+        else if(c == '-'){tape[tape_index]--;}
 
-        else if(c == *(".")){printf("%c", tape[tape_index]);}
+        else if(c == '.'){printf("%c", tape[tape_index]);}
 
-        else if(c == *(",")){tape[tape_index] = getc(stdin);}
+        else if(c == ','){tape[tape_index] = getc(stdin);}
 
-        else if (c == *("[")){
+        else if (c == '['){
 
         }
 
-        else if (c == *("]") && tape[tape_index] > 0){
+        else if (c == ']' && tape[tape_index] > 0){
             loop = 1;
             while(loop > 0){
                 c = content[--i];
-                if(c == *("[")){
+                if(c == '['){
                     loop--;
-                } else if(c == *("]")){
+                } else if(c == ']'){
                     loop++;
                 }
             }
